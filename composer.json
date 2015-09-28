@@ -1,0 +1,23 @@
+{
+  "name": "dreadlabs/app_migration_typo3",
+  "description": "Integrates dreadlabs/app-migration infrastructure into TYPO3.CMS.",
+  "type": "typo3-cms-extension",
+  "minimum-stability": "alpha",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thomas Juhnke",
+      "email": "typo3@van-tomas.de"
+    }
+  ],
+  "require": {
+    "dreadlabs/app-migration-lock-ninjamutex": "~0.1.0",
+    "dreadlabs/app-migration-migrator-phinx": "~0.1.0"
+  },
+  "require-dev": {
+    "typo3/cms": "~7.4.0"
+  },
+  "replace": {
+    "typo3/cms-composer-installers": "*"
+  }
+}
