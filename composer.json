@@ -1,5 +1,5 @@
 {
-  "name": "dreadlabs/app_migration_typo3",
+  "name": "dreadlabs/app-migration-typo3",
   "description": "Integrates dreadlabs/app-migration infrastructure into TYPO3.CMS.",
   "type": "typo3-cms-extension",
   "minimum-stability": "alpha",

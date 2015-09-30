@@ -1,5 +1,5 @@
 <?php
-namespace DreadLabs\AppMigration\App\Typo3\Database;
+namespace DreadLabs\AppMigrationTypo3\Database;
 
 /*
  * This file is part of the TYPO3 CMS project.

@@ -1,7 +1,7 @@
 <?php
 
 /***************************************************************
- * Extension Manager/Repository config file for ext "appmigration_typo3".
+ * Extension Manager/Repository config file for ext "app_migration_typo3".
  *
  * Manual updates:
  * Only the data in the array - everything else is removed by next

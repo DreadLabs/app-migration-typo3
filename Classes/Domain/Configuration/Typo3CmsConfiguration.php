@@ -1,5 +1,5 @@
 <?php
-namespace DreadLabs\AppMigration\App\Typo3\Domain\Configuration;
+namespace DreadLabs\AppMigrationTypo3\Domain\Configuration;
 
 /*
  * This file is part of the TYPO3 CMS project.
