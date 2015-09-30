@@ -18,15 +18,19 @@ if (!\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('dbal')) {
 	);
 	$extbaseObjectContainer->registerImplementation(
 		\NinjaMutex\Lock\LockInterface::class,
-		\DreadLabs\AppMigrationTypo3\Domain\Lock\Typo3TempFlockLock::class
+		\DreadLabs\AppMigrationTypo3\Domain\Lock\ApplicationFlockLock::class
 	);
+	$extbaseObjectContainer->registerImplementation(
+		\DreadLabs\AppMigration\Lock\NinjaMutex\NameInterface::class,
+		\DreadLabs\AppMigrationTypo3\Domain\Lock\Name::class
+	)
 	$extbaseObjectContainer->registerImplementation(
 		\DreadLabs\AppMigration\LoggerInterface::class,
 		\DreadLabs\AppMigrationTypo3\Domain\Logger::class
 	);
 	$extbaseObjectContainer->registerImplementation(
 		\DreadLabs\AppMigration\OutputInterface::class,
-		\DreadLabs\AppMigrationTypo3\Domain\NullOutput::class
+		\DreadLabs\AppMigrationTypo3\Domain\Migrator\NullOutput::class
 	);
 
 	$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Database\DatabaseConnection::class] = array(
