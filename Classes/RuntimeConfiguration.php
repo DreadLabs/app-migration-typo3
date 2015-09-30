@@ -14,7 +14,7 @@ namespace DreadLabs\AppMigrationTypo3;
  * The TYPO3 project - inspiring people to share!
  */
 
-use \TYPO3\CMS\Core\SingletonInterface;
+use TYPO3\CMS\Core\SingletonInterface;
 
 /**
  * RuntimeConfiguration

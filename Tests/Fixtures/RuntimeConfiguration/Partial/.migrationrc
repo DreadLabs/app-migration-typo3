@@ -1,0 +1,2 @@
+config_file_path = PATH_site"/phinx.yml"
+lock_path = PATH_site"/typo3temp/"
