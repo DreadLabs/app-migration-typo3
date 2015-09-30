@@ -14,6 +14,7 @@ namespace DreadLabs\AppMigrationTypo3\Domain\Configuration;
  * The TYPO3 project - inspiring people to share!
  */
 
+use DreadLabs\AppMigrationTypo3\RuntimeConfiguration;
 use Phinx\Config\ConfigInterface;
 
 /**
@@ -35,6 +36,13 @@ class Typo3CmsConfiguration implements ConfigInterface {
 	private $environments = array();
 
 	/**
+	 * RuntimeConfiguration
+	 *
+	 * @var RuntimeConfiguration
+	 */
+	private $runtimeConfiguration;
+
+	/**
 	 * Constructor
 	 *
 	 * @param array $configArray Config array
@@ -52,6 +60,17 @@ class Typo3CmsConfiguration implements ConfigInterface {
 				'charset' => 'utf8',
 			)
 		);
+	}
+
+	/**
+	 * InjectRuntimeConfiguration
+	 *
+	 * @param RuntimeConfiguration $configuration RuntimeConfiguration
+	 *
+	 * @return void
+	 */
+	public function injectRuntimeConfiguration(RuntimeConfiguration $configuration) {
+		$this->runtimeConfiguration = $configuration;
 	}
 
 	/**
@@ -105,7 +124,7 @@ class Typo3CmsConfiguration implements ConfigInterface {
 	 * @return string
 	 */
 	public function getConfigFilePath() {
-		return PATH_site . '/../phinx.yml';
+		return $this->runtimeConfiguration->getConfigFilePath();
 	}
 
 	/**
@@ -114,7 +133,7 @@ class Typo3CmsConfiguration implements ConfigInterface {
 	 * @return string
 	 */
 	public function getMigrationPath() {
-		return PATH_site . '/../migrations/';
+		return $this->runtimeConfiguration->getMigrationPath();
 	}
 
 	/**

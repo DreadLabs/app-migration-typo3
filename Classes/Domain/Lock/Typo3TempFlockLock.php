@@ -14,6 +14,7 @@ namespace DreadLabs\AppMigrationTypo3\Domain\Lock;
  * The TYPO3 project - inspiring people to share!
  */
 
+use DreadLabs\AppMigrationTypo3\RuntimeConfiguration;
 use NinjaMutex\Lock\FlockLock;
 
 /**
@@ -28,10 +29,10 @@ class Typo3TempFlockLock extends FlockLock {
 
 	/**
 	 * Constructor
+	 *
+	 * @param RuntimeConfiguration $configuration RuntimeConfiguration
 	 */
-	public function __construct() {
-		$directory = PATH_site . '/typo3temp/';
-
-		parent::__construct($directory);
+	public function __construct(RuntimeConfiguration $configuration) {
+		parent::__construct($configuration->getLockPath());
 	}
 }
