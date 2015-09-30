@@ -1,5 +1,5 @@
 <?php
-namespace DreadLabs\AppMigrationTypo3\Domain;
+namespace DreadLabs\AppMigrationTypo3\Domain\Migrator;
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -14,7 +14,7 @@ namespace DreadLabs\AppMigrationTypo3\Domain;
  * The TYPO3 project - inspiring people to share!
  */
 
-use DreadLabs\AppMigration\OutputInterface;
+use DreadLabs\AppMigration\Migrator\Phinx\OutputInterface;
 
 /**
  * NullOutput

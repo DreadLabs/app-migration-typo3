@@ -18,14 +18,14 @@ use DreadLabs\AppMigrationTypo3\RuntimeConfiguration;
 use NinjaMutex\Lock\FlockLock;
 
 /**
- * Typo3TempFlockLock
+ * ApplicationFlockLock
  *
  * Extends the NinjaMutex Flocklock with a directly set
  * lock file path to the TYPO3.CMS temp directory.
  *
  * @author Thomas Juhnke <typo3@van-tomas.de>
  */
-class Typo3TempFlockLock extends FlockLock {
+class ApplicationFlockLock extends FlockLock {
 
 	/**
 	 * Constructor
