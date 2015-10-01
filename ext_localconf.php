@@ -3,32 +3,32 @@ defined('TYPO3_MODE') or die();
 
 // override core database connection class
 if (!\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('dbal')) {
-	/* @var $extbaseObjectContainer \TYPO3\CMS\Extbase\Object\Container\Container */
-	$extbaseObjectContainer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+	/* @var $extbaseContainer \TYPO3\CMS\Extbase\Object\Container\Container */
+	$extbaseContainer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
 		\TYPO3\CMS\Extbase\Object\Container\Container::class
 	);
 
-	$extbaseObjectContainer->registerImplementation(
+	$extbaseContainer->registerImplementation(
 		\DreadLabs\AppMigration\MigratorInterface::class,
 		\DreadLabs\AppMigration\Migrator\Phinx::class
 	);
-	$extbaseObjectContainer->registerImplementation(
+	$extbaseContainer->registerImplementation(
 		\Phinx\Config\ConfigInterface::class,
 		\DreadLabs\AppMigrationTypo3\Domain\Configuration\Typo3CmsConfiguration::class
 	);
-	$extbaseObjectContainer->registerImplementation(
+	$extbaseContainer->registerImplementation(
 		\NinjaMutex\Lock\LockInterface::class,
 		\DreadLabs\AppMigrationTypo3\Domain\Lock\ApplicationFlockLock::class
 	);
-	$extbaseObjectContainer->registerImplementation(
+	$extbaseContainer->registerImplementation(
 		\DreadLabs\AppMigration\Lock\NinjaMutex\NameInterface::class,
 		\DreadLabs\AppMigrationTypo3\Domain\Lock\Name::class
 	)
-	$extbaseObjectContainer->registerImplementation(
+	$extbaseContainer->registerImplementation(
 		\DreadLabs\AppMigration\LoggerInterface::class,
 		\DreadLabs\AppMigrationTypo3\Domain\Logger::class
 	);
-	$extbaseObjectContainer->registerImplementation(
+	$extbaseContainer->registerImplementation(
 		\DreadLabs\AppMigration\OutputInterface::class,
 		\DreadLabs\AppMigrationTypo3\Domain\Migrator\NullOutput::class
 	);
