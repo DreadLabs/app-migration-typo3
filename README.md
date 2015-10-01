@@ -60,7 +60,7 @@ Note the additional `Logger` array key before `writerConfiguration`.
 ### Migration low-level API
 
 Currently, the migrator adapter `dreadlabs/app-migration-migrator-phinx` is used. This
-library out-of-the-box comes with a CLI. In order to use the CLI you also have to create 
+library come with a CLI out-of-the-box. In order to use the CLI you also have to create 
 a `phinx.yml` configuration file in your project's root directory (PATH_site in a default
 TYPO3.CMS instance):
 
@@ -83,6 +83,21 @@ TYPO3.CMS instance):
             charset: utf8
             
 Please read the [Phinx Documentation][phinx_documentation] for more information.
+
+## Restrictions
+
+### Not `ext:dbal` ready
+
+Migrations are currently not working if `ext:dbal` is loaded.
+
+### TYPO3.CMS early implementation registration
+
+Classes instantiated in TYPO3.CMS are currently not managed by the Extbase Dependency
+Injection Container. While `ext:extbase` provides a good example how to early-register
+concrete implementations in its `ext_localconf.php` its also state as **NO PUBLIC API**.
+
+While this is working currently perfectly fine, please note that the used approach may 
+be subject to change in the future.
 
 ## License
 
