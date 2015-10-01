@@ -23,7 +23,7 @@ if (!\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('dbal')) {
 	$extbaseContainer->registerImplementation(
 		\DreadLabs\AppMigration\Lock\NinjaMutex\NameInterface::class,
 		\DreadLabs\AppMigrationTypo3\Domain\Lock\Name::class
-	)
+	);
 	$extbaseContainer->registerImplementation(
 		\DreadLabs\AppMigration\LoggerInterface::class,
 		\DreadLabs\AppMigrationTypo3\Domain\Logger::class

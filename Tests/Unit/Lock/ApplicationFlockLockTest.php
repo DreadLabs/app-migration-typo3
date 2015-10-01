@@ -37,6 +37,6 @@ class ApplicationFlockLockTest extends \PHPUnit_Framework_TestCase {
 
 		$runtimeConfiguration->expects($this->once())->method('getLockPath')->willReturn('/foo/bar/typo3temp');
 
-		$lock = new ApplicationFlockLock($runtimeConfiguration);
+		new ApplicationFlockLock($runtimeConfiguration);
 	}
 }
