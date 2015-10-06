@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1f6a15ba8317cf38d0f207908d4a6c21",
-    "content-hash": "b591c6b04ad9d23368af1d8c24499a90",
+    "hash": "fa1c6ab095d5c97226cfe780ed9149f2",
+    "content-hash": "d408eb3fbc013f87ace2af4d3a521801",
     "packages": [
         {
             "name": "arvenil/ninja-mutex",
@@ -568,6 +568,46 @@
                 "instantiate"
             ],
             "time": "2015-06-14 21:17:01"
+        },
+        {
+            "name": "dreadlabs/typo3-dev",
+            "version": "7.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DreadLabs/typo3-dev.git",
+                "reference": "06278332e891919662777afda16e63dcb9444dae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DreadLabs/typo3-dev/zipball/06278332e891919662777afda16e63dcb9444dae",
+                "reference": "06278332e891919662777afda16e63dcb9444dae",
+                "shasum": ""
+            },
+            "require": {
+                "pdepend/pdepend": "~2.0",
+                "phploc/phploc": "~2.1",
+                "phpmd/phpmd": "~2.2",
+                "phpunit/phpunit": "~4.6",
+                "sebastian/phpcpd": "~2.0",
+                "squizlabs/php_codesniffer": "~2.3",
+                "typo3/cms": "7.4.0"
+            },
+            "replace": {
+                "typo3/cms-composer-installers": "*"
+            },
+            "type": "metapackage",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv2"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Juhnke",
+                    "email": "dev@van-tomas.de"
+                }
+            ],
+            "description": "TYPO3.CMS development meta-package.",
+            "time": "2015-10-06 20:30:08"
         },
         {
             "name": "helhum/class-alias-loader",
