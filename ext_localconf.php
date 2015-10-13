@@ -10,7 +10,7 @@ if (!\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('dbal')) {
 
 	$extbaseContainer->registerImplementation(
 		\DreadLabs\AppMigration\MigratorInterface::class,
-		\DreadLabs\AppMigration\Migrator\Phinx::class
+		\DreadLabs\AppMigration\Migrator\Phinx\Migrator::class
 	);
 	$extbaseContainer->registerImplementation(
 		\Phinx\Config\ConfigInterface::class,
@@ -25,11 +25,23 @@ if (!\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('dbal')) {
 		\DreadLabs\AppMigrationTypo3\Domain\Lock\Name::class
 	);
 	$extbaseContainer->registerImplementation(
+		\DreadLabs\AppMigration\LockInterface::class,
+		\DreadLabs\AppMigration\Lock\NinjaMutex\Lock::class
+	);
+	$extbaseContainer->registerImplementation(
+		\DreadLabs\AppMigration\Lock\NinjaMutex\TimeoutInterface::class,
+		\DreadLabs\AppMigration\Lock\NinjaMutex\Timeout\Blocking::class
+	);
+	$extbaseContainer->registerImplementation(
+		\DreadLabs\AppMigration\Lock\NinjaMutex\NameInterface::class,
+		\DreadLabs\AppMigrationTypo3\Domain\Lock\Name::class
+	);
+	$extbaseContainer->registerImplementation(
 		\DreadLabs\AppMigration\LoggerInterface::class,
 		\DreadLabs\AppMigrationTypo3\Domain\Logger::class
 	);
 	$extbaseContainer->registerImplementation(
-		\DreadLabs\AppMigration\OutputInterface::class,
+		\DreadLabs\AppMigration\Migrator\Phinx\OutputInterface::class,
 		\DreadLabs\AppMigrationTypo3\Domain\Migrator\NullOutput::class
 	);
 
