@@ -58,9 +58,9 @@ class RuntimeConfiguration implements SingletonInterface {
 	 */
 	private function setDefaultSettings() {
 		$this->settings = array(
-			'config_file_path' => PATH_site . '/phinx.yml',
-			'migration_path' => PATH_site . '/migrations/',
-			'lock_path' => PATH_site . '/typo3temp/',
+			'config_file_path' => PATH_site . 'phinx.yml',
+			'migration_path' => PATH_site . 'migrations/',
+			'lock_path' => PATH_site . 'typo3temp/',
 		);
 	}
 

@@ -19,9 +19,9 @@ corresponds to the one used in `php.ini`. Its content gets parsed by
 will be resolved automatically. This is  an example configuration with the default 
 values:
 
-    config_file_path = PATH_site"/phinx.yml"
-    migration_path = PATH_site"/migrations/"
-    lock_path = PATH_site"/typo3temp/"
+    config_file_path = PATH_site"phinx.yml"
+    migration_path = PATH_site"migrations/"
+    lock_path = PATH_site"typo3temp/"
     
 **Hint:** Ensure your webserver setup blocks access to / delivery of dotfiles.
 
