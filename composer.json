@@ -12,10 +12,10 @@
   ],
   "require": {
     "dreadlabs/app-migration-lock-ninjamutex": "~0.1.0",
-    "dreadlabs/app-migration-migrator-phinx": "~0.1.0"
+    "dreadlabs/app-migration-migrator-phinx": "~0.1.1"
   },
   "require-dev": {
-    "dreadlabs/typo3-dev": "~7.4.0"
+    "dreadlabs/typo3-dev": "~7.5.0"
   },
   "autoload": {
     "psr-4": {
