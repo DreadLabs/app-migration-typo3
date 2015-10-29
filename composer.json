@@ -3,7 +3,7 @@
   "description": "Integrates dreadlabs/app-migration infrastructure into TYPO3.CMS.",
   "type": "typo3-cms-extension",
   "minimum-stability": "alpha",
-  "license": "MIT",
+  "license": "GPL-2.0+",
   "authors": [
     {
       "name": "Thomas Juhnke",
