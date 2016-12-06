@@ -2,7 +2,7 @@
 namespace DreadLabs\AppMigrationTypo3\Tests\Unit\Lock;
 
 /*
- * This file is part of the TYPO3 CMS project.
+ * This file is part of the `DreadLabs/app-migration-typo3` project.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -13,6 +13,7 @@ namespace DreadLabs\AppMigrationTypo3\Tests\Unit\Lock;
  *
  * The TYPO3 project - inspiring people to share!
  */
+
 use DreadLabs\AppMigrationTypo3\Domain\Lock\ApplicationFlockLock;
 use DreadLabs\AppMigrationTypo3\RuntimeConfiguration;
 
@@ -21,22 +22,24 @@ use DreadLabs\AppMigrationTypo3\RuntimeConfiguration;
  *
  * @author Thomas Juhnke <typo3@van-tomas.de>
  */
-class ApplicationFlockLockTest extends \PHPUnit_Framework_TestCase {
+class ApplicationFlockLockTest extends \PHPUnit_Framework_TestCase
+{
 
-	/**
-	 * ItFetchesThePathFromRuntimeConfigurationOnConstruction
-	 *
-	 * @runInSeparateProcess
-	 *
-	 * @return void
-	 */
-	public function testItFetchesThePathFromRuntimeConfigurationOnConstruction() {
-		define('PATH_site', __DIR__);
+    /**
+     * ItFetchesThePathFromRuntimeConfigurationOnConstruction
+     *
+     * @runInSeparateProcess
+     *
+     * @return void
+     */
+    public function testItFetchesThePathFromRuntimeConfigurationOnConstruction()
+    {
+        define('PATH_site', __DIR__);
 
-		$runtimeConfiguration = $this->getMock(RuntimeConfiguration::class);
+        $runtimeConfiguration = $this->getMock(RuntimeConfiguration::class);
 
-		$runtimeConfiguration->expects($this->once())->method('getLockPath')->willReturn('/foo/bar/typo3temp');
+        $runtimeConfiguration->expects($this->once())->method('getLockPath')->willReturn('/foo/bar/typo3temp');
 
-		new ApplicationFlockLock($runtimeConfiguration);
-	}
+        new ApplicationFlockLock($runtimeConfiguration);
+    }
 }

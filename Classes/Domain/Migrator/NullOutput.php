@@ -2,7 +2,7 @@
 namespace DreadLabs\AppMigrationTypo3\Domain\Migrator;
 
 /*
- * This file is part of the TYPO3 CMS project.
+ * This file is part of the `DreadLabs/app-migration-typo3` project.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -21,5 +21,6 @@ use DreadLabs\AppMigration\Migrator\Phinx\OutputInterface;
  *
  * @author Thomas Juhnke <typo3@van-tomas.de>
  */
-class NullOutput extends \Symfony\Component\Console\Output\NullOutput implements OutputInterface {
+class NullOutput extends \Symfony\Component\Console\Output\NullOutput implements OutputInterface
+{
 }

@@ -2,7 +2,7 @@
 namespace DreadLabs\AppMigrationTypo3\Domain\Lock;
 
 /*
- * This file is part of the TYPO3 CMS project.
+ * This file is part of the `DreadLabs/app-migration-typo3` project.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -21,14 +21,16 @@ use DreadLabs\AppMigration\Lock\NinjaMutex\NameInterface;
  *
  * @author Thomas Juhnke <typo3@van-tomas.de>
  */
-class Name implements NameInterface {
+class Name implements NameInterface
+{
 
-	/**
-	 * Returns the name for the NinjaMutex lock
-	 *
-	 * @return string
-	 */
-	public function __toString() {
-		return 'typo3-cms-migration';
-	}
+    /**
+     * Returns the name for the NinjaMutex lock
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'typo3-cms-migration';
+    }
 }

@@ -2,7 +2,7 @@
 namespace DreadLabs\AppMigrationTypo3\Domain;
 
 /*
- * This file is part of the TYPO3 CMS project.
+ * This file is part of the `DreadLabs/app-migration-typo3` project.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -22,45 +22,49 @@ use TYPO3\CMS\Core\Log;
  *
  * @author Thomas Juhnke <typo3@van-tomas.de>
  */
-class Logger implements LoggerInterface {
+class Logger implements LoggerInterface
+{
 
-	/**
-	 * Logger impl
-	 *
-	 * @var Log\Logger
-	 */
-	private $logger;
+    /**
+     * Logger impl
+     *
+     * @var Log\Logger
+     */
+    private $logger;
 
-	/**
-	 * Constructor
-	 *
-	 * @param Log\LogManager $logManager Application log manager
-	 */
-	public function __construct(Log\LogManager $logManager) {
-		$this->logger = $logManager->getLogger(__CLASS__);
-	}
+    /**
+     * Constructor
+     *
+     * @param Log\LogManager $logManager Application log manager
+     */
+    public function __construct(Log\LogManager $logManager)
+    {
+        $this->logger = $logManager->getLogger(__CLASS__);
+    }
 
-	/**
-	 * Logs emergency-leveled events
-	 *
-	 * @param string $message Log message
-	 * @param array $context Context data
-	 *
-	 * @return void
-	 */
-	public function emergency($message, array $context = array()) {
-		$this->logger->emergency($message, $context);
-	}
+    /**
+     * Logs emergency-leveled events
+     *
+     * @param string $message Log message
+     * @param array $context Context data
+     *
+     * @return void
+     */
+    public function emergency($message, array $context = [])
+    {
+        $this->logger->emergency($message, $context);
+    }
 
-	/**
-	 * Logs info-leveled events
-	 *
-	 * @param string $message Log message
-	 * @param array $context Context data
-	 *
-	 * @return void
-	 */
-	public function info($message, array $context = array()) {
-		$this->logger->info($message, $context);
-	}
+    /**
+     * Logs info-leveled events
+     *
+     * @param string $message Log message
+     * @param array $context Context data
+     *
+     * @return void
+     */
+    public function info($message, array $context = [])
+    {
+        $this->logger->info($message, $context);
+    }
 }

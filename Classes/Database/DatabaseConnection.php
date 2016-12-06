@@ -2,7 +2,7 @@
 namespace DreadLabs\AppMigrationTypo3\Database;
 
 /*
- * This file is part of the TYPO3 CMS project.
+ * This file is part of the `DreadLabs/app-migration-typo3` project.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -30,49 +30,52 @@ use TYPO3\CMS\Extbase\Object\ObjectManagerInterface;
  *
  * @author Thomas Juhnke <typo3@van-tomas.de>
  */
-class DatabaseConnection extends \TYPO3\CMS\Core\Database\DatabaseConnection {
+class DatabaseConnection extends \TYPO3\CMS\Core\Database\DatabaseConnection
+{
 
-	/**
-	 * Mediator
-	 *
-	 * @var MediatorInterface
-	 */
-	private $mediator;
+    /**
+     * Mediator
+     *
+     * @var MediatorInterface
+     */
+    private $mediator;
 
-	/**
-	 * Open a (persistent) connection to a MySQL server
-	 *
-	 * @return bool|void
-	 *
-	 * @throws \RuntimeException Thrown in parent if php ext mysqli is not loaded.
-	 * @throws MigrationException If something went wrong during migration
-	 */
-	public function sql_pconnect() {
-		$link = parent::sql_pconnect();
+    /**
+     * Open a (persistent) connection to a MySQL server
+     *
+     * @throws \RuntimeException Thrown in parent if php ext mysqli is not loaded.
+     * @throws MigrationException If something went wrong during migration
+     * @return bool|void
+     */
+    public function sql_pconnect()
+    {
+        $link = parent::sql_pconnect();
 
-		$this->initializeMediator();
-		$this->mediator->negotiate();
+        $this->initializeMediator();
+        $this->mediator->negotiate();
 
-		return $link;
-	}
+        return $link;
+    }
 
-	/**
-	 * Initializes a mediator instance
-	 *
-	 * @return void
-	 */
-	private function initializeMediator() {
-		if (is_null($this->mediator)) {
-			$this->mediator = $this->getObjectManager()->get(MediatorInterface::class);
-		}
-	}
+    /**
+     * Initializes a mediator instance
+     *
+     * @return void
+     */
+    private function initializeMediator()
+    {
+        if (is_null($this->mediator)) {
+            $this->mediator = $this->getObjectManager()->get(MediatorInterface::class);
+        }
+    }
 
-	/**
-	 * Returns an object manager instance
-	 *
-	 * @return ObjectManagerInterface
-	 */
-	private function getObjectManager() {
-		return GeneralUtility::makeInstance(ObjectManager::class);
-	}
+    /**
+     * Returns an object manager instance
+     *
+     * @return ObjectManagerInterface
+     */
+    private function getObjectManager()
+    {
+        return GeneralUtility::makeInstance(ObjectManager::class);
+    }
 }
