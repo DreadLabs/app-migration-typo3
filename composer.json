@@ -15,12 +15,12 @@
     "dreadlabs/app-migration-migrator-phinx": "~0.1.1"
   },
   "require-dev": {
-    "dreadlabs/typo3-dev": "~7.5.0"
+    "dreadlabs/typo3-dev": "~7.6.0"
   },
   "autoload": {
     "psr-4": {
       "DreadLabs\\AppMigrationTypo3\\": "Classes/",
-      "DreadLabs\\AppMigrationTypo3\\Tests\\": "tests/"
+      "DreadLabs\\AppMigrationTypo3\\Tests\\": "Tests/"
     }
   }
 }
